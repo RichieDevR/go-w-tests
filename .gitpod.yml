@@ -1,0 +1,10 @@
+image: gitpod/workspace-full:latest
+ports:
+- port: 3000
+- port: 22
+- port: 8080
+- port: 43
+- port: 5000
+- port: 8000
+tasks:
+- command: sudo apt update && sudo apt upgrade
