@@ -7,8 +7,5 @@ ports:
   - port: 5000
   - port: 8000
 tasks:
-  - command: sudo apt update -y && sudo apt upgrade -y && sudo apt install -y luarocks xclip xsel
-  - command: sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
-  - command: cargo install fd-find
-  - command: pacstall -I neovim
-  - command: cd nvim-treesitter-deps && pnpm add -g pnpm && pnpm add -g tree-sitter-cli && pnpm add -g neovim
+  - command: sudo apt update -y && sudo apt upgrade -y && sudo apt install -y luarocks xclip xsel && cargo install fd-find & \
+    yes | sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)" & \ pacstall -P -I neovim & \ cd nvim-treesitter-deps && pnpm add -g pnpm && pnpm add -g tree-sitter-cli && pnpm add -g neovim
