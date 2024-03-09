@@ -3,9 +3,10 @@ package main
 import "fmt"
 
 const (
-	englishPrefix = "Hello, "
-	spanishPrefix = "Hola, "
-	frenchPrefix  = "Bonjour, "
+	englishPrefix    = "Hello, "
+	spanishPrefix    = "Hola, "
+	frenchPrefix     = "Bonjour, "
+	portuguesePrefix = "Olá, "
 )
 
 func Hello(name string, language string) string {
@@ -20,6 +21,8 @@ func Hello(name string, language string) string {
 		prefix = spanishPrefix
 	case "French":
 		prefix = frenchPrefix
+	case "Portuguese":
+		prefix = portuguesePrefix
 	}
 
 	return prefix + name
@@ -27,8 +30,9 @@ func Hello(name string, language string) string {
 
 func main() {
 	fmt.Println(Hello("", ""))
-	fmt.Println(Hello("Elodie", "Spanish"))
-	fmt.Println(Hello("Jamie", "French"))
-	fmt.Println(Hello("Rich", "English"))
+	fmt.Println(Hello("Ricardo", "Spanish"))
+	fmt.Println(Hello("Ricardo", "Portuguese"))
+	fmt.Println(Hello("Richard", "French"))
+	fmt.Println(Hello("Richie", "English"))
 	fmt.Println(Hello("", "Default"))
 }
