@@ -26,5 +26,9 @@ func Hello(name string, language string) string {
 }
 
 func main() {
-	fmt.Println(Hello("Rich", ""))
+	fmt.Println(Hello("", ""))
+	fmt.Println(Hello("Elodie", "Spanish"))
+	fmt.Println(Hello("Jamie", "French"))
+	fmt.Println(Hello("Rich", "English"))
+	fmt.Println(Hello("", "Default"))
 }
