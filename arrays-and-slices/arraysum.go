@@ -13,8 +13,8 @@ func SumAll(arraysToSum ...[]int) []int {
 
 	sumOfNumbersInArray := make([]int, numberOfArraysToSum)
 
-	for i, numbersInArray := range arraysToSum {
-		sumOfNumbersInArray[i] = SumArray(numbersInArray)
+	for i, array := range arraysToSum {
+		sumOfNumbersInArray[i] = SumArray(array)
 	}
 
 	return sumOfNumbersInArray
