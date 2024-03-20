@@ -1,6 +1,6 @@
 package main
 
-func SumArray(array []int) int {
+func Sum(array []int) int {
 	sum := 0
 	for _, num := range array {
 		sum += num
@@ -9,13 +9,11 @@ func SumArray(array []int) int {
 }
 
 func SumAll(arraysToSum ...[]int) []int {
-	numberOfArraysToSum := len(arraysToSum)
+	var sums []int
 
-	sumOfNumbersInArray := make([]int, numberOfArraysToSum)
-
-	for i, array := range arraysToSum {
-		sumOfNumbersInArray[i] = SumArray(array)
+	for _, arrays := range arraysToSum {
+		sums = append(sums, Sum(arrays))
 	}
 
-	return sumOfNumbersInArray
+	return sums
 }
