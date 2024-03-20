@@ -1,9 +1,9 @@
 package main
 
-func SumArray(array [5]int) int {
-	var sum int
-	for i := 0; i < 5; i++ {
-		sum += array[i]
+func SumArray(nums [5]int) int {
+	sum := 0
+	for _, num := range nums {
+		sum += num
 	}
 	return sum
 }
