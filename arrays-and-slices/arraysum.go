@@ -7,3 +7,15 @@ func SumArray(array []int) int {
 	}
 	return sum
 }
+
+func SumAll(arraysToSum ...[]int) []int {
+	numberOfArraysToSum := len(arraysToSum)
+
+	sumOfNumbersInArray := make([]int, numberOfArraysToSum)
+
+	for i, array := range arraysToSum {
+		sumOfNumbersInArray[i] = SumArray(array)
+	}
+
+	return sumOfNumbersInArray
+}
