@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func Sum(array []int) int {
 	sum := 0
 	for _, num := range array {
@@ -25,10 +23,8 @@ func SumAllTails(arraysToSum ...[]int) []int {
 
 	for _, arrayTail := range arraysToSum {
 		tail := arrayTail[1:]
-		fmt.Println(tail, arrayTail, sums)
 
 		sums = append(sums, Sum(tail))
-		fmt.Println(tail, arrayTail, sums)
 	}
 
 	return sums
