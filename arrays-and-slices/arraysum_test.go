@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestSumArray(t *testing.T) {
+func TestSum(t *testing.T) {
 	numbers := []int{1, 2, 3, 4, 5}
 	var sum int
 
@@ -13,7 +13,7 @@ func TestSumArray(t *testing.T) {
 		sum += numbers[i]
 	}
 
-	got := SumArray(numbers)
+	got := Sum(numbers)
 
 	want := sum
 
