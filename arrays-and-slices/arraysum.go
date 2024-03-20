@@ -11,11 +11,11 @@ func SumArray(array []int) int {
 func SumAll(arraysToSum ...[]int) []int {
 	numberOfArraysToSum := len(arraysToSum)
 
-	sumOfNumbers := make([]int, numberOfArraysToSum)
+	sumOfNumbersInArray := make([]int, numberOfArraysToSum)
 
 	for i, numbersInArray := range arraysToSum {
-		sumOfNumbers[i] = SumArray(numbersInArray)
+		sumOfNumbersInArray[i] = SumArray(numbersInArray)
 	}
 
-	return sumOfNumbers
+	return sumOfNumbersInArray
 }

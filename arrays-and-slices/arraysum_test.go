@@ -23,9 +23,9 @@ func TestSumArray(t *testing.T) {
 }
 
 func TestSumAll(t *testing.T) {
-	got := SumAll([]int{1, 2}, []int{0, 9})
+	got := SumAll([]int{1, 2}, []int{0, 9}, []int{9, 1})
 
-	want := []int{3, 9}
+	want := []int{3, 9, 10}
 
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("I got %v but I want %v", got, want)
