@@ -9,9 +9,9 @@ func SumArray(array []int) int {
 }
 
 func SumAll(arraysToSum ...[]int) []int {
-	lengthOfArrays := len(arraysToSum)
+	numberOfArraysToSum := len(arraysToSum)
 
-	sumOfNumbers := make([]int, lengthOfArrays)
+	sumOfNumbers := make([]int, numberOfArraysToSum)
 
 	for i, numbersInArray := range arraysToSum {
 		sumOfNumbers[i] = SumArray(numbersInArray)
