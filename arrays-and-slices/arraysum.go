@@ -1,5 +1,9 @@
 package main
 
 func SumArray(array [5]int) int {
-	return 0
+	var sum int
+	for i := 0; i < 5; i++ {
+		sum += array[i]
+	}
+	return sum
 }
