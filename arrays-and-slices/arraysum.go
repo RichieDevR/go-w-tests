@@ -17,3 +17,15 @@ func SumAll(arraysToSum ...[]int) []int {
 
 	return sums
 }
+
+func SumAllTails(arraysToSum ...[]int) []int {
+	var sums []int
+
+	for _, arrayTail := range arraysToSum {
+		tail := arrayTail[1:]
+
+		sums = append(sums, Sum(tail))
+	}
+
+	return sums
+}
