@@ -25,7 +25,6 @@ func SumAllTails(arraysToSum ...[]int) []int {
 		if len(arrayTail) == 0 {
 			sums = append(sums, 0)
 		} else {
-
 			tail := arrayTail[1:]
 
 			sums = append(sums, Sum(tail))
