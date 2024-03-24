@@ -23,32 +23,35 @@ func TestSum(t *testing.T) {
 }
 
 func TestSumAll(t *testing.T) {
-	got := SumAll([]int{1, 2}, []int{0, 9}, []int{9, 1})
+	checkSums := func(t testing.TB, got, want []int) {
+		t.Helper()
 
-	want := []int{3, 9, 10}
-
-	if !reflect.DeepEqual(got, want) {
-		t.Errorf("I got %v but I want %v", got, want)
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("I got %v but I want %v", got, want)
+		}
 	}
-}
 
-func TestSumAllTails(t *testing.T) {
+	t.Run("get sum for entirety of each slice", func(t *testing.T) {
+		got := SumAll([]int{1, 2}, []int{0, 9}, []int{9, 1})
+
+		want := []int{3, 9, 10}
+
+		checkSums(t, got, want)
+	})
+
 	t.Run("make array of sum for tail of slices", func(t *testing.T) {
 		got := SumAllTails([]int{1, 2, 3}, []int{0, 9, 3})
 
 		want := []int{5, 12}
 
-		if !reflect.DeepEqual(got, want) {
-			t.Errorf("I got %v but I want %v", got, want)
-		}
+		checkSums(t, got, want)
 	})
+
 	t.Run("safely sum empty slices", func(t *testing.T) {
 		got := SumAllTails([]int{}, []int{3, 9, 3})
 
 		want := []int{0, 12}
 
-		if !reflect.DeepEqual(got, want) {
-			t.Errorf("I got %v but I want %v", got, want)
-		}
+		checkSums(t, got, want)
 	})
 }
