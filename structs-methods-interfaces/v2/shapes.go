@@ -3,11 +3,10 @@ package main
 import "math"
 
 // Shape is implemented by anything that can tell us its Area or Perimeter.
-type Shape interface{
+type Shape interface {
 	Area() float64
-	Perimeter() float64 
+	Perimeter() float64
 }
-
 
 // Rectangle has the dimensions of a rectangle and represents a rectangle.
 type Rectangle struct {
@@ -15,7 +14,6 @@ type Rectangle struct {
 
 	Height float64
 }
-
 
 // Area returns the area of the rectangle.
 func (r Rectangle) Area() float64 {
@@ -41,7 +39,6 @@ func (c Circle) Area() float64 {
 func (c Circle) Perimeter() float64 {
 	return 2 * math.Pi * c.Radius
 }
-
 
 // Triangle represents a triangle...
 type Triangle struct {
