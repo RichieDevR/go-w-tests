@@ -13,8 +13,10 @@ type Shape interface {
 
 func TestPerimeter(t *testing.T) {
 	perimeterTests := []struct {
-		shape        Shape
-		name         string
+		shape Shape
+
+		name string
+
 		hasPerimeter float64
 	}{
 		{name: "Rectangle p", shape: Rectangle{12, 6}, hasPerimeter: 36.0},
