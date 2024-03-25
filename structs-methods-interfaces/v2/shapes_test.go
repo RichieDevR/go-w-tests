@@ -5,6 +5,11 @@ import (
 	"testing"
 )
 
+// Table Driven Tests for Perimeter method on shape interface.
+// Tests that code for shape.Perimeter() functions properly in v2.
+// similar to shape.Area() tests seen here and in v1. this was done
+// as a challenge to myself and to drive home what was learned in the
+// original lesson
 func TestPerimeter(t *testing.T) {
 	perimeterTests := []struct {
 		shape Shape
