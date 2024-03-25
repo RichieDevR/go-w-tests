@@ -1,22 +1,33 @@
 package main
 
 import (
+	"math"
 	"testing"
 )
 
 type Shape interface {
 	Area() float64
+	Perimeter() float64
 }
 
 func TestPerimeter(t *testing.T) {
-	rect := Rectangle{10.0, 10.0}
+	perimeterTests := []struct {
+		name         string
+		shape        Shape
+		hasPerimeter float64
+	}{
+		{name: "Rectangle p", shape: Rectangle{12, 6}, hasPerimeter: 36.0},
+		{name: "Circle p", shape: Circle{10}, hasPerimeter: 62.83},
+		{name: "Triangle p", shape: Triangle{12, 6}, hasPerimeter: 31.42},
+	}
 
-	got := Perimeter(rect)
-
-	want := 40.0
-
-	if got != want {
-		t.Errorf("got %.2f want %.2f", got, want)
+	for _, tt := range perimeterTests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := tt.shape.Perimeter()
+			if math.Abs(got-tt.hasPerimeter) > 0.01 {
+				t.Errorf("%s %s got %.2f want %.2f", tt.name, tt.shape, got, tt.hasPerimeter)
+			}
+		})
 	}
 }
 
