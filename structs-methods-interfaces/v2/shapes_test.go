@@ -5,12 +5,6 @@ import (
 	"testing"
 )
 
-type Shape interface {
-	Area() float64
-
-	Perimeter() float64
-}
-
 func TestPerimeter(t *testing.T) {
 	perimeterTests := []struct {
 		shape Shape
