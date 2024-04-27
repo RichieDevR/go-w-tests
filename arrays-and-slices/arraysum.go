@@ -1,31 +1,31 @@
 package main
 
-func Sum(array []int) int {
+func Sum(slice []int) int {
 	sum := 0
-	for _, num := range array {
+	for _, num := range slice {
 		sum += num
 	}
 	return sum
 }
 
-func SumAll(arraysToSum ...[]int) []int {
+func SumAll(summedSlices ...[]int) []int {
 	var sums []int
 
-	for _, arrays := range arraysToSum {
-		sums = append(sums, Sum(arrays))
+	for _, slice := range summedSlices {
+		sums = append(sums, Sum(slice))
 	}
 
 	return sums
 }
 
-func SumAllTails(arraysToSum ...[]int) []int {
+func SumAllTails(summedSlices ...[]int) []int {
 	var sums []int
 
-	for _, arrayTail := range arraysToSum {
-		if len(arrayTail) == 0 {
+	for _, sliceTail := range summedSlices {
+		if len(sliceTail) == 0 {
 			sums = append(sums, 0)
 		} else {
-			tail := arrayTail[1:]
+			tail := sliceTail[1:]
 
 			sums = append(sums, Sum(tail))
 		}
